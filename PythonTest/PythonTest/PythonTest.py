@@ -1,3 +1,5 @@
+﻿#  Copyright Mager 2023
+# All rights reserved lmao
 import sys
 accumulated_str = ""
 sum = 0
