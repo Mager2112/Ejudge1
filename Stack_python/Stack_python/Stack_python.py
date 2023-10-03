@@ -1,3 +1,6 @@
+﻿#  Copyright Mager 2023
+#  All rights reserved lmao
+
 # Stack - data type that can do two commands Pop() and Push() 
 # Push(item) - creating last element 
 # Pop() - deleting last element 
