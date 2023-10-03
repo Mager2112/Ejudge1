@@ -34,8 +34,3 @@ if what == 2:
     st.push(a)
 print(st.items)
 print(f'Size: {st.size()}')
-
-
-
-
-    
