@@ -7,19 +7,19 @@ class Deque:
     def is_empty(self):
         return self.items == []
     #add in left
-    def append_left(self, item):
+    def pushf(self, item):
         self.items.insert(0, item)
     #add in right
-    def append_right(self, item):
+    def pushb(self, item):
         self.items.append(item)
     #delete in left
-    def pop_left(self):
+    def popf(self):
         if not self.is_empty():
             return self.items.pop(0)
         else:
             return "Deque is empty"
     #delete in right
-    def pop_right(self):
+    def popb(self):
         if not self.is_empty():
             return self.items.pop()
         else:
@@ -28,7 +28,7 @@ class Deque:
         return len(self.items)
 if __name__ == '__main__':
     deque = Deque()
-    deque.append_left(1)
-    deque.append_right(2)
-    deque.append_left(3)
+    deque.pushf(1)
+    deque.pushb(2)
+    deque.pushf(3)
     print(deque.items) # 3 1 2
