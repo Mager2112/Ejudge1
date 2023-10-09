@@ -1,3 +1,4 @@
+import fileinput
 #Deque - data structure, where you can add and delete elements at left and right
 class Deque:
     #initialization
@@ -33,7 +34,39 @@ class Deque:
         return len(self.items)
 if __name__ == '__main__':
     deque = Deque()
-    deque.pushf(1)
-    deque.pushb(2)
-    deque.pushf(3)
-    print(deque.items) # 3 1 2
+    for line in fileinput.input():
+        line = line.replace('\n', '')
+
+        if line == '':
+            continue
+
+        elif deque.capacity == 0:
+            params: list = line.split(' ')
+            if params[0] == 'set_size' and len(params) == 2:
+                deque.set_size(params[1])
+            else:
+                print('error')
+
+        # без сайза
+        elif deque.capacity != 0:
+            params = line.split(' ')
+            if len(params) > 2:
+                print('error')
+            elif len(params) == 2:
+                if params[0] == 'pushf':
+                    deque.pushf(params[1])
+                elif params[0] == 'pushb':
+                    deque.pushb(params[1])
+                else:
+                    print('error')
+            elif line == 'popf':
+                print(deque.popf())
+            elif line == 'popb':
+                print(deque.popb())
+
+            elif line == 'print':
+                deque.print()
+            else:
+                print('error')
+        else:
+            print('error')
