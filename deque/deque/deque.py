@@ -2,11 +2,16 @@
 class Deque:
     #initialization
     def __init__(self):
-        self.items = []
-    #check for emptiness
-    def is_empty(self):
-        return self.items == []
-    #add in left
+        self.size: int = 0
+        self.capacity: int = 0
+        self.first: int = 0
+    #setting size
+    def set_size(self, input_size: str):
+        if input_size.is_digit():
+            self.capacity=int(input_size) 
+            self.array = [None] * int(input_size)
+        else:
+            print('error')
     def pushf(self, item):
         self.items.insert(0, item)
     #add in right
