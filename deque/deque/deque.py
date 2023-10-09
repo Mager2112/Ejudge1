@@ -1,5 +1,4 @@
-﻿# Copyright Mager 2023
-# All rights reserved lmao
+
 #Deque - data structure, where you can add and delete elements at left and right
 class Deque:
     #initialization
