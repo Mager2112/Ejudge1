@@ -1,21 +1,21 @@
 ﻿#  Copyright Mager 2023
 # All rights reserved lmao
 import sys
-accumulated_str = ""
-sum = 0
+result = 0
+acc_string = ""
 while True:
 	char = sys.stdin.read(1)
 	if char == '':
 		break
-	if char.isdigit() or(accumulated_str == "" and char == '-'):
-		accumulated_str += char
-	elif accumulated_str == "-" and char == '-':
+	if char.isdigit() or (acc_string == "" and char == '-'):
+		acc_string += char
+	elif acc_string == "-" and char == '-':
 		continue
-	elif accumulated_str and not char.isdigit():
-		if len(accumulated_str) < 2 and accumulated_str.isdigit():
-			sum += int(accumulated_str)
-		elif accumulated_str.isdigit() or (accumulated_str[0] == '-' and accumulated_str[1:].isdigit()):
-			sum += int(accumulated_str)
-		accumulated_str=""
-print(sum)
+	elif acc_string and not char.isdigit():
+		if len(acc_string) < 2 and acc_string.isdigit():
+			result += int(acc_string)
+		elif acc_string.isdigit() or (acc_string[0] == '-' and acc_string[1:].isdigit()):
+			result += int(acc_string)
+		acc_string = ""
+print(result)
 	    
