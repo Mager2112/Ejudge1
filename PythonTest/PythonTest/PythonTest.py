@@ -12,10 +12,10 @@ while True:
 	elif acc_string == "-" and char == '-':
 		continue
 	elif acc_string and not char.isdigit():
-		if len(acc_string) < 2 and acc_string.isdigit():
-			result += int(acc_string)
-		elif acc_string.isdigit() or (acc_string[0] == '-' and acc_string[1:].isdigit()):
-			result += int(acc_string)
+		#if len(acc_string) < 2 and acc_string.isdigit():
+		#	result += int(acc_string)
+		#elif acc_string.isdigit() or (acc_string[0] == '-' and acc_string[1:].isdigit()):
+		result += int(acc_string)
 		acc_string = ""
 print(result)
 	    
