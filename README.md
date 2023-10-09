@@ -1,2 +1,2 @@
 # Ejudge1
-This is Ejudge for BMSTU
+This is exercises for Ejudge №1 from BMSTU
