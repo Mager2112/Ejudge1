@@ -1,4 +1,4 @@
-﻿#  Copyright Mager 2023
+﻿# Copyright Mager 2023
 # All rights reserved lmao
 import sys
 result = 0
