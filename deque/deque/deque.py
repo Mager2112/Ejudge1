@@ -9,7 +9,7 @@ class Deque:
         self.capacity: int = 0
         self.first: int = 0
     #setting size
-    def set_size(self, input_size: str):
+    def set_size(self, input_size: str) -> [None]:
         if input_size.is_digit():
             self.capacity=int(input_size) 
             self.array = [None] * int(input_size)
