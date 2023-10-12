@@ -1,7 +1,4 @@
-﻿# Copyright Mager 2023
-# All rights reserved lmao
 import fileinput
-#Deque - data structure, where you can add and delete elements at left and right
 class Deque:
     #initialization
     def __init__(self):
@@ -9,8 +6,8 @@ class Deque:
         self.capacity: int = 0
         self.first: int = 0
     #setting size
-    def set_size(self, input_size: str) -> [None]:
-        if input_size.is_digit():
+    def set_size(self, input_size: str) -> None:
+        if input_size.isdigit():
             self.capacity=int(input_size) 
             self.array = [None] * int(input_size)
         else:
