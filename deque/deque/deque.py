@@ -15,25 +15,58 @@ class Deque:
             self.array = [None] * int(input_size)
         else:
             print('error')
-    def pushf(self, item):
-        self.items.insert(0, item)
-    #add in right
-    def pushb(self, item):
-        self.items.append(item)
-    #delete in left
-    def popf(self):
-        if not self.is_empty():
-            return self.items.pop(0)
+            
+    def pushb(self, value: str) -> None:
+        if self.size == self.capacity:
+            print('overflow')
         else:
-            return "Deque is empty"
-    #delete in right
-    def popb(self):
-        if not self.is_empty():
-            return self.items.pop()
+            self.array[(self.first + self.size) % self.capacity] = value
+            self.size += 1
+            
+    def pushf(self, value: str) -> None:
+        if self.size == self.capacity:
+            print('overflow')
         else:
-            return "Deque is empty"
-    def size(self):
-        return len(self.items)
+            self.size += 1
+            self.first -= 1
+            self.array[(self.first) % self.capacity] = value
+            
+    def popb(self) -> str:
+        if self.size == 0:
+            return ('underflow')
+        else:
+            result: str
+            result, self.array[(self.first + self.size - 1) % self.capacity] = \
+                self.array[(self.first + self.size - 1) % self.capacity], None
+
+            self.size -= 1
+            return result
+            
+    def popf(self) -> str:
+        #     можно конечно через [x if x] - но так доп память
+        if self.size == 0:
+            return ('underflow')
+
+        else:
+            result: str
+            result, self.array[self.first % self.capacity] = self.array[self.first % self.capacity], None
+            self.first += 1
+            self.size -= 1
+            return result
+
+
+    def print(self) -> None:
+        #     можно конечно через [x if x] - но так доп память
+        if self.size == 0:
+            print('empty')
+            return
+        for i in range(self.size):
+            if i != self.size - 1:
+                print(self.array[(self.first + i) % self.capacity], end=' ')
+            else:
+                print(self.array[(self.first + i) % self.capacity])
+
+
 if __name__ == '__main__':
     deque = Deque()
     for line in fileinput.input():
