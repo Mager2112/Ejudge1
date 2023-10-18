@@ -1,6 +1,5 @@
 ﻿#  Copyright Mager 2023
 #  All rights reserved lmao
-
 # Stack - data type that can do two commands Pop() and Push() 
 # Push(item) - creating last element 
 # Pop() - deleting last element 
@@ -23,7 +22,7 @@ class Stack:
     # Size of stack
     def size(self):
         return len(self.items)
-# Main
+        
 st = Stack()
 st.push(1)
 st.push(2)
